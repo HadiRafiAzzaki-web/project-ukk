@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: rgb(52, 46, 46);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 20%;
+    padding: 16px;
+    background: rgb(98, 185, 214);
+    min-height: 100vh;
+    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.sidebar-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    color: rgb(255, 248, 248);
+}
+
+.sidebar a:hover {
+    transform: translateY(-3px);
+    transition: 300ms ease-in;
+    color: #d0e6f4;
+}
+
+.sidebar .btn-logout {
+    text-align: center;
+    color: rgb(245, 228, 228);
+    background: rgb(248, 66, 66);
+    padding: 12px 18px;
+}
+
+.sidebar .btn-logout:hover {
+    transform: translateY(-3px);
+    transition: 300ms ease-in;
+}
+
+.dashboard {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
+    padding: 16px;
+}
+
+.user-info h3, p {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.tool-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card {
+    box-shadow: 1px 1px 2px 1px rgb(103, 151, 228);
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #111829;
+    font-size: 1rem;
+}
+
+.input-group input {
+    padding: 12px;
+    width: 100%;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #4673e5;
+}
+
+.dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dashboard th, .dashboard td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #d0e6f4;
+    text-align: left;
+}
+
+.dashboard th {
+    background: #64afd8;
+    color: #f6f1f1;
+    font-weight: 600;
+}
+
+.dashboard table a {
+    text-decoration: none;
+}
+
+
+.dashboard tbody tr:hover {
+    background: #f5f9ff;
+}
+
+.dashboard tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.action-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.action {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.action.update {
+    color: #3182ce;
+    background-color: #ebf8ff;
+}
+
+.action.update:hover {
+    transform: translateY(-5px);
+}
