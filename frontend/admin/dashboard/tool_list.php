@@ -2,6 +2,7 @@
 include_once __DIR__ . '/../../../backend/connection.php';
 include_once __DIR__ . '/../../../backend/getUserData.php';
 require __DIR__ . '/../../../backend/auth.php';
+include __DIR__ . '/../../utils/price_format.php';
 
 $queryProduk = mysqli_query($connection, "select * from produk");
 ?>
@@ -36,7 +37,7 @@ $queryProduk = mysqli_query($connection, "select * from produk");
                     <?php while ($produk = mysqli_fetch_assoc($queryProduk)): ?>
                         <tr>
                             <td><?php echo $produk['nama_produk'] ?></td>
-                            <td><?php echo $produk['harga'] ?></td>
+                            <td><?php echo Rupiah($produk['harga']) ?></td>
                             <td><?php echo $produk['stok'] ?></td>
                             <td>
                                 <a href="./edit_product.php?id=<?php echo $produk['id']; ?>" class="action update">Edit</a>

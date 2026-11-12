@@ -2,15 +2,22 @@
 include_once __DIR__ . '/../../../backend/connection.php';
 require __DIR__ . '/../../../backend/auth.php';
 include_once __DIR__ . '/../../../backend/getUserData.php';
+include_once __DIR__ . '/../../utils/price_format.php';
 
 $id = $_GET['id'];
+
+$queryPenjualan = mysqli_query($connection, "select penjualan_id from detail_penjualan where id = $id");
+$dataPenjualan = mysqli_fetch_assoc($queryPenjualan);
+$idPenjualan = $dataPenjualan['penjualan_id'];
+
 $query = mysqli_query($connection, "
-    select detail_penjualan.*, penjualan.*, produk.*, pelanggan.* 
+    select detail_penjualan.*, penjualan.tanggal_penjualan as tanggal, penjualan.id as penjualanId, produk.*, pelanggan.namaPelanggan, users.username
     from detail_penjualan 
     inner join penjualan on detail_penjualan.penjualan_id = penjualan.id 
     inner join produk on detail_penjualan.produk_id = produk.id
     inner join pelanggan on penjualan.pelanggan_id = pelanggan.id
-    where penjualan.id = '$id'
+    inner join users on penjualan.petugas_id = users.id
+    where detail_penjualan.id = '$id' and detail_penjualan.penjualan_id = '$idPenjualan'
 ");
 
 ?>
@@ -29,28 +36,42 @@ $query = mysqli_query($connection, "
     <main class="container">
         <?php include __DIR__ . '/../../components/sidebar.php' ?>
         <section class="dashboard">
-            <a href="./home.php"><- Kembali</a>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tanggal Penjualan</th>
-                        <th>Nama Pelanggan</th>
-                        <th>Nama Produk</th>
-                        <th>Jumlah Produk</th>
-                        <th>Subtotal</th>
+            <a href="./transaction.php"><- Kembali</a>
+            <table class="nota">
+                <?php while ($transaction = mysqli_fetch_assoc($query)): ?>
+                    <tr class="info">
+                        <td>Id Penjualan:</td>
+                        <td><?php echo $transaction['penjualanId'] ?></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php while ($penjualan = mysqli_fetch_assoc($query)): ?>
-                        <tr>
-                            <td><?php echo $penjualan['tanggal_penjualan'] ?></td>
-                            <td><?php echo $penjualan['namaPelanggan'] ?></td>
-                            <td><?php echo $penjualan['nama_produk'] ?></td>
-                            <td><?php echo $penjualan['jumlah_produk'] ?></td>
-                            <td><?php echo $penjualan['subtotal'] ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
+                    <tr>
+                        <td>Tanggal Penjualan:</td>
+                        <td><?php echo $transaction['tanggal'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Kepada Bapak/Ibu:</td>
+                        <td><?php echo $transaction['namaPelanggan'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Petugas:</td>
+                        <td><?php echo $transaction['username'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Produk:</td>
+                        <td><?php echo $transaction['nama_produk'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Harga Produk:</td>
+                        <td><?php echo Rupiah($transaction['harga']) ?></td>
+                    </tr>
+                    <tr>
+                        <td>Jumlah Produk:</td>
+                        <td><?php echo $transaction['jumlah_produk'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td><?php echo Rupiah($transaction['subtotal']) ?></td>
+                    </tr>
+                <?php endwhile; ?>
             </table>
         </section>
     </main>

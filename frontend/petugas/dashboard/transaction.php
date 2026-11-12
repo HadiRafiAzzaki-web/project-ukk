@@ -2,6 +2,7 @@
 include_once __DIR__ . '/../../../backend/connection.php';
 include_once __DIR__ . '/../../../backend/getUserData.php';
 require __DIR__ . '/../../../backend/auth.php';
+include __DIR__ . '/../../utils/price_format.php';
 
 $query = mysqli_query($connection, "
     select detail_penjualan.*, penjualan.*, produk.*, pelanggan.* 
@@ -45,7 +46,7 @@ $query = mysqli_query($connection, "
                             <td><?php echo $produk['namaPelanggan'] ?></td>
                             <td><?php echo $produk['nama_produk'] ?></td>
                             <td><?php echo $produk['jumlah_produk'] ?></td>
-                            <td><?php echo $produk['subtotal'] ?></td>
+                            <td><?php echo Rupiah($produk['subtotal']) ?></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>

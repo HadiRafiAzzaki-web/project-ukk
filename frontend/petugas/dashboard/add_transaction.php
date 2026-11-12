@@ -21,7 +21,9 @@ $queryProduct = mysqli_query($connection, "select * from produk");
         <?php include __DIR__ . '/../../components/sidebar.php' ?>
 
         <section class="dashboard">
-            <form action="/web-kasir/backend/controller/admin/add_transaction_controller.php" method="post">
+            <?php include __DIR__ . '/../../components/header.php' ?>
+            <a href="./transaction.php"><- Kembali</a>
+            <form action="/web-kasir/backend/controller/add_transaction_controller.php" method="post">
                 <div class="input-group">
                     <label for="namaPelanggan">Nama Pelanggan</label>
                     <input type="text" name="namaPelanggan" placeholder="Masukkan Nama Pelanggan">
@@ -31,8 +33,8 @@ $queryProduct = mysqli_query($connection, "select * from produk");
                     <input type="text" name="alamat" placeholder="Masukkan Alamat Pelanggan">
                 </div>
                 <div class="input-group">
-                    <label for="nomorTelepon">No. Hp Pelanggan</label>
-                    <input type="text" name="nomorTelepon" placeholder="Masukkan Nomor Telepon Pelanggan">
+                    <label for="noPhone">No. Hp Pelanggan</label>
+                    <input type="text" name="noPhone" placeholder="Masukkan Nomor Telepon Pelanggan">
                 </div>
                 <div class="input-group">
                     <label for="nama_produk">Produk yang Dibeli Pelanggan</label>

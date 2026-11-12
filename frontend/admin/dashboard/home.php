@@ -2,6 +2,7 @@
 include_once __DIR__ . '/../../../backend/connection.php';
 include_once __DIR__ . '/../../../backend/getUserData.php';
 require __DIR__ . '/../../../backend/auth.php';
+include __DIR__ . "/../../utils/price_format.php";
 
 $query = mysqli_query($connection, "select * from produk");
 $jumlahProduk = mysqli_num_rows($query);
@@ -45,7 +46,6 @@ $queryPenjualan = mysqli_query($connection, "select *, pelanggan.namaPelanggan a
                         <th>Tanggal Penjualan</th>
                         <th>Nama Pelanggan</th>
                         <th>Total Harga</th>
-                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,8 +53,7 @@ $queryPenjualan = mysqli_query($connection, "select *, pelanggan.namaPelanggan a
                         <tr>
                             <td><?php echo $penjualan['tanggal_penjualan'] ?></td>
                             <td><?php echo $penjualan['nama'] ?></td>
-                            <td><?php echo $penjualan['total_harga'] ?></td>
-                            <td><a href="./detail.php?id=<?php echo $penjualan['id']; ?>">Detail</a></td>
+                            <td><?php echo Rupiah($penjualan['total_harga']) ?></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>

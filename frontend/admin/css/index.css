@@ -15,12 +15,10 @@ a {
     text-decoration: none;
 }
 
-li {
-    list-style: none;
-}
-
 .container {
     display: flex;
+    width: 100%;
+    align-items: flex-start;
     flex-direction: row;
     justify-content: center;
 }
@@ -30,13 +28,13 @@ li {
     top: 0;
     z-index: 10;
     width: 20%;
-    padding: 16px;
     background: rgb(98, 98, 214);
-    max-height: 100vh;
-    gap: 30px;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    min-height: 100vh;
 }
 
 .sidebar-container {
@@ -144,6 +142,7 @@ button {
 
 .dashboard table a {
     text-decoration: none;
+    
 }
 
 .dashboard tbody tr:hover {
@@ -152,4 +151,31 @@ button {
 
 .dashboard tbody tr:last-child td {
     border-bottom: none;
+}
+
+.action {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.action.update {
+    color: #3182ce;
+    background-color: #ebf8ff;
+}
+
+.action.update:hover {
+    transform: translateY(-5px);
+}
+
+.action.delete {
+    color: rgb(241, 52, 52);
+    background-color: #ebf8ff;
+}
+
+.action.delete:hover {
+    transform: translateY(-5px);
 }

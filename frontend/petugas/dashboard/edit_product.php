@@ -20,9 +20,10 @@ $dataProduct = mysqli_query($connection, "select * from produk where id = '$id'"
         <?php include __DIR__ . '/../../components/sidebar.php' ?>
 
         <section class="dashboard">
+            <?php include __DIR__ . '/../../components/header.php' ?>
             <a href="./tool_list.php"><- Kembali</a>
                     <?php while ($product = mysqli_fetch_array($dataProduct)): ?>
-                        <form action="../../../backend/controller/admin/edit_controller.php" method="post">
+                        <form action="../../../backend/controller/edit_controller.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
                             <div class="input-group">
                                 <label for="nama_produk">Nama Produk</label>

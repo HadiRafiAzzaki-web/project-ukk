@@ -1,6 +1,6 @@
 <?php
-include_once __DIR__ . '/../../connection.php';
-include __DIR__ . '/../../getUserData.php';
+include_once __DIR__ . '/../connection.php';
+include __DIR__ . '/../getUserData.php';
 
 $productName = $_POST['nama_produk'];
 $productPrice = $_POST['harga'];

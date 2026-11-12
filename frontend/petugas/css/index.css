@@ -15,12 +15,10 @@ a {
     text-decoration: none;
 }
 
-li {
-    list-style: none;
-}
-
 .container {
     display: flex;
+    width: 100%;
+    align-items: flex-start;
     flex-direction: row;
     justify-content: center;
 }
@@ -146,13 +144,6 @@ li {
 
 .dashboard tbody tr:last-child td {
     border-bottom: none;
-}
-
-.action-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
 }
 
 .action {
