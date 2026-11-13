@@ -1,5 +1,45 @@
 # Dokumentasi Project UKK Kasir
 
+## Latar Belakang ##
+
+Judul Tugas : Membuat Aplikasi Kasir
+Langkah Kerja :
+1. Buatlah daftar kebutuhan teknis dan spesifikasi perangkat yang dibutuhkan pada
+lembar yang disediakan !
+2. Siapkan peralatan dan bahan yang diperlukan sesuai dengan daftar peralatan !
+3. Installah text editor dan software pendukung lainnya yang digunakan untuk
+memprogram aplikasi kasir !
+4. Interpretasikan spesifikasi program yang diberikan:
+
+a. Aplikasi berbasis sistem client-server.
+
+b. Aplikasi dapat dibuat berbasis web atau perangkat bergerak.
+
+c. Aplikasi menggunakan pembagian privilege dengan tingkatan (administrator dan
+petugas).
+
+5. Buatlah Desain User Interface.
+
+a. Fitur minimal dan pembagian privilege dalam aplikasi:
+
+| Fitur | Administrator | Petugas |
+|---|---|---|
+| Login | X | X |
+| Logout | X | X |
+| Registrasi | X | |
+| Pendataan Barang | X | X |
+| Pembelian | | |
+| Stok Barang | X | X |
+
+b. Desain dibuat dengan memperhatikan kaidah UI/UX
+c. Form pelaporan dibuat sekomunikatif mungkin
+d. Terapkan pemrograman berbasis objek (object oriented programming)
+
+6. Buatlah database yang digunakan untuk menambah, mengedit, menghapus, dan
+melihat data penjualan barang !
+7. Running dan testing hasil program !
+8. Buatlah dikumentasi kode program dan upload portofolio pada github ! 
+
 ## 1. Ringkasan Project
 
 **Nama Project:** Web Kasir  
