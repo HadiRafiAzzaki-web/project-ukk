@@ -13,7 +13,7 @@
     <main class="container">
         <?php include __DIR__ . '/../../components/sidebar.php' ?>
         <section class="dashboard">
-            <a href="./tool_list.php"><- Kembali</a>
+            <a href="./tool_list.php" class="btn-return"><- Kembali</a>
                     <form action="/web-kasir/backend/controller/add_tool_controller.php" method="post">
                         <div class="input-group">
                             <label for="nama_produk">Nama Produk</label>

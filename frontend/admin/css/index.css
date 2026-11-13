@@ -46,12 +46,15 @@ a {
 
 .sidebar a {
     color: rgb(255, 248, 248);
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .sidebar a:hover {
     transform: translateY(-3px);
     transition: 300ms ease-in;
     color: #f0d0f4;
+    background: #ab46e5;
 }
 
 .sidebar .btn-logout {
@@ -64,6 +67,8 @@ a {
 .sidebar .btn-logout:hover {
     transform: translateY(-3px);
     transition: 300ms ease-in;
+    color: white;
+    background: rgb(140, 5, 5);
 }
 
 .dashboard {
@@ -111,6 +116,28 @@ a {
 .input-group input:focus {
     outline: none;
     border-color: #ab46e5;
+}
+
+.btn-return {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.btn-return:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    transform: translateX(-3px);
 }
 
 button {
@@ -165,6 +192,7 @@ button {
 .action.update {
     color: #3182ce;
     background-color: #ebf8ff;
+    box-shadow: 1px 1px 2px 2px grey;
 }
 
 .action.update:hover {
@@ -174,6 +202,7 @@ button {
 .action.delete {
     color: rgb(241, 52, 52);
     background-color: #ebf8ff;
+    box-shadow: 1px 1px 2px 2px grey;
 }
 
 .action.delete:hover {

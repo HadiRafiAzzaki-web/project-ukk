@@ -18,6 +18,7 @@ include_once __DIR__ . '/../../backend/getUserData.php';
             <a href="home.php">Dashboard</a>
             <a href="tool_list.php">Pendataan Barang</a>
             <a href="transaction.php">Transaksi</a>
+            <a href="add_customer.php">Tambah Pelanggan</a>
         </div>
         <a href="/web-kasir/backend/auth/logout.php" class="btn-logout">Logout</a>
     <?php endif; ?>

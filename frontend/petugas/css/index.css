@@ -46,12 +46,15 @@ a {
 
 .sidebar a {
     color: rgb(255, 248, 248);
+    padding: 12px;
+    border-radius: 8px
 }
 
 .sidebar a:hover {
     transform: translateY(-3px);
     transition: 300ms ease-in;
     color: #d0e6f4;
+    background: rgb(81, 179, 211);
 }
 
 .sidebar .btn-logout {
@@ -64,6 +67,8 @@ a {
 .sidebar .btn-logout:hover {
     transform: translateY(-3px);
     transition: 300ms ease-in;
+    color: white;
+    background: rgb(140, 5, 5);
 }
 
 .dashboard {
@@ -92,6 +97,28 @@ a {
     border-radius: 5px;
 }
 
+.btn-return {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.btn-return:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    transform: translateX(-3px);
+}
+
 .input-group {
     margin-bottom: 15px;
 }
@@ -108,8 +135,9 @@ a {
     width: 100%;
 }
 
-.input-group input:focus {
+.input-group input:focus, input:hover {
     outline: none;
+    transform: translateY(-1px);
     border-color: #4673e5;
 }
 
@@ -137,13 +165,34 @@ a {
     text-decoration: none;
 }
 
-
 .dashboard tbody tr:hover {
     background: #f5f9ff;
 }
 
 .dashboard tbody tr:last-child td {
     border-bottom: none;
+}
+
+.actions-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-add {
+    margin-top: 10px;
+    border: 1px solid #3182ce;
+    padding: 10px 12px;
+    color: rgb(248, 244, 244);
+    background: #3182ce;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    transition: 300ms ease-in;
+    background: #2c67fe;
 }
 
 .action {

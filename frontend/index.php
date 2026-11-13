@@ -20,7 +20,7 @@
                     <a href="./auth/page/login.php" class="menu-content purple">
                         <h3>Login</h3>
                         <div class="arrow">
-                            >
+                            &gt;
                         </div>
                     </a>
                 </li>

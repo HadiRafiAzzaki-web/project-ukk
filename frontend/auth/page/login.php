@@ -11,7 +11,7 @@
 <body>
     <main class="container">
         <div class="card">
-            <a href="../../index.php"><- Kembali</a>
+            <a href="../../index.php" class="btn-return"><- Kembali</a>
             <form action="/web-kasir/backend/auth/login_controller.php" method="post">
                 <div class="input-group">
                     <label for="username">Username</label>
