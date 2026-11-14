@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$error = $_SESSION['error'] ?? '';
+unset($_SESSION['error']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,17 +19,22 @@
     <main class="container">
         <div class="card">
             <a href="../../index.php" class="btn-return"><- Kembali</a>
-            <form action="/web-kasir/backend/auth/login_controller.php" method="post">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username">
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="text" name="password">
-                </div>
-                <button type="submit">Login</button>
-            </form>
+                    <?php if ($error): ?>
+                        <div class="error-message">
+                            <?php echo $error ?>
+                        </div>
+                    <?php endif; ?>
+                    <form action="/web-kasir/backend/auth/login_controller.php" method="post">
+                        <div class="input-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="text" name="password">
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
         </div>
     </main>
 </body>

@@ -73,10 +73,12 @@ Struktur utama project:
 |    |    |--- delete_controller.php
 |    |    |--- delete_detail_controller.php
 |    |    |--- edit_controller.php
+|    |    |--- edit_transaction_controller.php
 |    |    |--- register_controller.php
 |    |--- queries/
 |    |    |--- admin/
 |    |    |    |--- detail_query.php
+|    |    |    |--- edit_transaction_query.php
 |    |    |    |--- home_query.php
 |    |    |    |--- transaction_query.php
 |    |    |--- petugas/
@@ -94,6 +96,7 @@ Struktur utama project:
 |    |         |--- add_tool.php
 |    |         |--- detail.php
 |    |         |--- edit_product.php
+|    |         |--- edit_transaction.php
 |    |         |--- home.php
 |    |         |--- register.php
 |    |         |--- tool_list.php
@@ -242,6 +245,12 @@ Fungsi: Mengambil produk berdasarkan ID URL dan menampilkan form edit.
 
 Fungsi: Menampilkan daftar transaksi beserta pelanggan, produk, total, dan tombol edit.
 
+### Edit Transaksi
+
+![Edit](assets/screenshot/edit-transaksi-admin.png)
+
+Fungsi: Mengambil detail penjualan berdasarkan ID URL dan menapilkan form edit.
+
 ### Detail Transaksi
 
 ![Detail](assets/screenshot/detail-transaksi-admin.png)
@@ -372,6 +381,12 @@ Alur pemrosesan transaksi:
 - Memperbarui data produk berdasarkan ID.
 - Mengarahkan pengguna kembali ke daftar produk berdasarkan role.
 
+#### `edit_transaction_controller.php`
+
+- Menerima ID, tanggal, ID pelanggan, uang pelanggan, produk, dan jumlah produk melalui POST.
+- memperbarui data transaksi berdasarkan ID `detail_penjualan`.
+- Mengarahkan pengguna kembali ke transaksi `admin`.
+
 #### `register_controller.php`
 
 - Memastikan session login melalui `auth.php`.
@@ -400,6 +415,10 @@ Mengambil daftar penjualan dengan `join` ke tabel pelanggan, detail penjualan, d
 #### `backend/queries/admin/detail_query.php`
 
 Mengambil detail suatu penjualan berdasarkan parameter GET `id`. Query menggabungkan data detail penjualan, penjualan, produk, pelanggan, dan akun petugas.
+
+#### `backend/queries/admin/edit_transaction_query.php`
+
+Mengambil data transaksi beserta detail produk untuk melakukan edit transaksi berdasarkan parameter GET `id`.
 
 ### 6.4 Query Petugas
 

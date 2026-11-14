@@ -38,7 +38,10 @@ include __DIR__ . '/../../../backend/queries/admin/transaction.php'
                             <td><?php echo $produk['namaPelanggan'] ?></td>
                             <td><?php echo $produk['daftar_produk'] ?></td>
                             <td><?php echo Rupiah($produk['total_harga']) ?></td>
-                            <td><a href="./detail.php?id=<?php echo $produk['id']; ?>" class="action update">Detail</a></td>
+                            <td>
+                                <a href="./detail.php?id=<?php echo $produk['id']; ?>" class="action update">Detail</a>
+                                <a href="./edit_transaction.php?id=<?php echo $produk['id'] ?>" class="action update">Edit</a>
+                            </td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
